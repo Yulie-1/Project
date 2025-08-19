@@ -1,0 +1,29 @@
+""" Future
+
+Types of requests:
+- GET: 
+    - Retrieve statistics and plots
+- POST:
+    - 
+- PUT:
+    - 
+"""
+
+"""_TODO
+
+In the future:
+    - Add authentication and authorization
+    - Add users
+    - Chat?
+    - Add database connection
+    - Divide tasks by category
+    - Implement the "just a moment" technique?
+    - Different GET for tasks and statistics
+    - Time tracking for tasks
+    - Until there is an agent - start and end of work hours
+    - Every task completion is logged with date/time.
+    - Create logs
+    - Archive tasks
+
+
+"""
