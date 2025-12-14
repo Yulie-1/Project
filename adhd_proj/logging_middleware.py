@@ -4,6 +4,8 @@ import time
 # Note to self: Always wrap middleware functions with try and except blocks! 
 # Logs should NEVER affect functionality.
 
+##### Not Used Currently #####
+
 
 
 async def log_requests(request: Request, call_next):
