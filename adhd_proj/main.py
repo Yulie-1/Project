@@ -1,11 +1,11 @@
 from fastapi import FastAPI
-from routes import router
-from middleware import log_requests
+from routes.routes_api import router
+#from logging_middleware import log_requests
 
 app = FastAPI()
 
 app.include_router(router)
-app.middleware("http")(log_requests)
+#app.middleware("http")(log_requests)
 
 
 
