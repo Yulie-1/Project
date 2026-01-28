@@ -4,3 +4,18 @@
 {"message": "Reading tasks", "url": null, "method": null, "timestamp": "2025-10-19 19:39:43,514"}
 {"message": "HTTPerror 404: No tasks found", "url": null, "method": null, "timestamp": "2025-10-19 19:39:43,524"}
 {"message": "Reading tasks", "url": null, "method": null, "timestamp": "2025-10-22 19:06:32,502"}
+{"message": "Reading tasks", "url": null, "method": null, "timestamp": "2026-01-27 14:24:29,745", "logger_name": "api_logger"}
+{"message": "Error reading tasks: '_GeneratorContextManager' object does not support the asynchronous context manager protocol", "url": null, "method": null, "timestamp": "2026-01-27 14:24:29,746", "logger_name": "api_logger"}
+{"message": "HTTPerror 500: Internal Server Error", "url": null, "method": null, "timestamp": "2026-01-27 14:24:29,747", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-01-27 14:24:57,989", "logger_name": "api_logger"}
+{"message": "Unexpected error creating task: '_GeneratorContextManager' object does not support the asynchronous context manager protocol", "url": null, "method": null, "timestamp": "2026-01-27 14:24:57,994", "logger_name": "api_logger"}
+{"message": "HTTPerror 500: Error creating task: '_GeneratorContextManager' object does not support the asynchronous context manager protocol", "url": null, "method": null, "timestamp": "2026-01-27 14:24:57,994", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-01-27 14:25:10,996", "logger_name": "api_logger"}
+{"message": "Unexpected error creating task: '_GeneratorContextManager' object does not support the asynchronous context manager protocol", "url": null, "method": null, "timestamp": "2026-01-27 14:25:10,996", "logger_name": "api_logger"}
+{"message": "HTTPerror 500: Error creating task: '_GeneratorContextManager' object does not support the asynchronous context manager protocol", "url": null, "method": null, "timestamp": "2026-01-27 14:25:10,996", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-01-27 19:35:17,673", "logger_name": "api_logger"}
+{"message": "IntegrityError creating task: (psycopg.errors.ForeignKeyViolation) insert or update on table \"tasks\" violates foreign key constraint \"tasks_category_name_fkey\"\nDETAIL:  Key (category_name)=(racoon) is not present in table \"categories\".\n[SQL: INSERT INTO tasks (category_name, deadline, status, description) VALUES (%(category_name)s::VARCHAR, %(deadline)s::TIMESTAMP WITHOUT TIME ZONE, %(status)s::VARCHAR, %(description)s::VARCHAR) RETURNING tasks.task_id, tasks.created_at]\n[parameters: {'category_name': 'racoon', 'deadline': None, 'status': 'in_progress', 'description': 'i want banana'}]\n(Background on this error at: https://sqlalche.me/e/20/gkpj)", "url": null, "method": null, "timestamp": "2026-01-27 19:35:17,728", "logger_name": "api_logger"}
+{"message": "HTTPerror 409: Constraint violation (e.g. invalid category)", "url": null, "method": null, "timestamp": "2026-01-27 19:35:17,729", "logger_name": "api_logger"}
+{"message": "Creating category", "url": null, "method": null, "timestamp": "2026-01-27 20:41:24,417", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-01-27 20:43:13,874", "logger_name": "api_logger"}
+{"message": "Reading tasks", "url": null, "method": null, "timestamp": "2026-01-27 20:43:39,559", "logger_name": "api_logger"}

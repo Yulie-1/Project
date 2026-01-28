@@ -1,0 +1,19 @@
+{"message": "Reading tasks from database", "url": null, "method": null, "timestamp": "2026-01-27 14:24:29,746", "logger_name": "db_logger"}
+{"message": "Creating task: i want banana", "url": null, "method": null, "timestamp": "2026-01-27 14:24:57,994", "logger_name": "db_logger"}
+{"message": "Creating task: i want banana", "url": null, "method": null, "timestamp": "2026-01-27 14:25:10,996", "logger_name": "db_logger"}
+{"message": "Establishing database connection...", "url": null, "method": null, "timestamp": "2026-01-27 18:24:05,433", "logger_name": "db_logger"}
+{"message": "Database operation failed: (psycopg.InterfaceError) Psycopg cannot use the 'ProactorEventLoop' to run in async mode. Please use a compatible event loop, for instance by setting 'asyncio.set_event_loop_policy(WindowsSelectorEventLoopPolicy())'\n(Background on this error at: https://sqlalche.me/e/20/rvf5)", "url": null, "method": null, "timestamp": "2026-01-27 18:24:05,436", "logger_name": "db_logger"}
+{"message": "Closing database connection...", "url": null, "method": null, "timestamp": "2026-01-27 18:24:05,437", "logger_name": "db_logger"}
+{"message": "Creating task: i want banana", "url": null, "method": null, "timestamp": "2026-01-27 19:35:17,679", "logger_name": "db_logger"}
+{"message": "Establishing database connection...", "url": null, "method": null, "timestamp": "2026-01-27 19:35:17,680", "logger_name": "db_logger"}
+{"message": "Database operation failed: (psycopg.errors.ForeignKeyViolation) insert or update on table \"tasks\" violates foreign key constraint \"tasks_category_name_fkey\"\nDETAIL:  Key (category_name)=(racoon) is not present in table \"categories\".\n[SQL: INSERT INTO tasks (category_name, deadline, status, description) VALUES (%(category_name)s::VARCHAR, %(deadline)s::TIMESTAMP WITHOUT TIME ZONE, %(status)s::VARCHAR, %(description)s::VARCHAR) RETURNING tasks.task_id, tasks.created_at]\n[parameters: {'category_name': 'racoon', 'deadline': None, 'status': 'in_progress', 'description': 'i want banana'}]\n(Background on this error at: https://sqlalche.me/e/20/gkpj)", "url": null, "method": null, "timestamp": "2026-01-27 19:35:17,706", "logger_name": "db_logger"}
+{"message": "Closing database connection...", "url": null, "method": null, "timestamp": "2026-01-27 19:35:17,707", "logger_name": "db_logger"}
+{"message": "Creating category: racoon", "url": null, "method": null, "timestamp": "2026-01-27 20:41:24,418", "logger_name": "db_logger"}
+{"message": "Establishing database connection...", "url": null, "method": null, "timestamp": "2026-01-27 20:41:24,418", "logger_name": "db_logger"}
+{"message": "Closing database connection...", "url": null, "method": null, "timestamp": "2026-01-27 20:41:24,438", "logger_name": "db_logger"}
+{"message": "Creating task: i want banana", "url": null, "method": null, "timestamp": "2026-01-27 20:43:13,874", "logger_name": "db_logger"}
+{"message": "Establishing database connection...", "url": null, "method": null, "timestamp": "2026-01-27 20:43:13,874", "logger_name": "db_logger"}
+{"message": "Closing database connection...", "url": null, "method": null, "timestamp": "2026-01-27 20:43:13,921", "logger_name": "db_logger"}
+{"message": "Reading tasks from database", "url": null, "method": null, "timestamp": "2026-01-27 20:43:39,559", "logger_name": "db_logger"}
+{"message": "Establishing database connection...", "url": null, "method": null, "timestamp": "2026-01-27 20:43:39,559", "logger_name": "db_logger"}
+{"message": "Closing database connection...", "url": null, "method": null, "timestamp": "2026-01-27 20:43:39,598", "logger_name": "db_logger"}
