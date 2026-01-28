@@ -9,8 +9,18 @@ class Status(str, Enum):
     done = "done"
 
 class Task(BaseModel):
-    creation_time: float | None = None
+    task_id: int | None = None
+    created_at: datetime.datetime | None = None
     category_name: str
     status: Status
-    deadline: datetime.datetime | None = None  # Assuming deadline is a datetime, can be None if not set
+    deadline: datetime.datetime | None = None
     description: str | None = None
+
+    class Config:
+        from_attributes = True
+
+class Category(BaseModel):
+    category_name: str
+
+    class Config:
+        from_attributes = True

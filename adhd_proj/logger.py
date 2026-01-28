@@ -38,7 +38,7 @@ api_file_handler.setFormatter(formatter)
 api_logger.addHandler(api_file_handler)
 
 
-# --- 6. DB Logger Setup (NEW) ---
+# --- DB Logger Setup (NEW) ---
 # Create a new logger with a unique name
 db_logger = logging.getLogger("db_logger")
 db_logger.setLevel(logging.INFO) # You could set this to DEBUG for more verbosity
