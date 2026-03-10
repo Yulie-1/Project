@@ -1,0 +1,31 @@
+services:
+  api:
+    build: .
+    container_name: adhd_proj_api
+    restart: always
+    ports:
+      - "8000:8000"
+    environment:
+      - DB_USERNAME=${DB_USERNAME}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_DATABASE_NAME=${DB_DATABASE_NAME}
+    depends_on:
+      - db
+
+  db:
+    image: postgres:15-alpine
+    container_name: adhd_proj_db
+    restart: always
+    environment:
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_DATABASE_NAME}
+    ports:
+      - "${DB_PORT:-5432}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
