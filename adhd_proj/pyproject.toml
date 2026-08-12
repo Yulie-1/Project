@@ -1,12 +1,14 @@
 [project]
 name = "adhd-proj"
 version = "0.1.0"
-description = "Add your description here"
+description = "A FastAPI-based backend for a productivity and focus management application using SQLAlchemy and PostgreSQL."
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
+    "debugpy>=1.8.20",
     "dotenv>=0.9.9",
     "fastapi>=0.116.1",
+    "httpx>=0.28.1",
     "psycopg2>=2.9.10",
     "psycopg2-binary>=2.9.10",
     "psycopg[binary]>=3.2.9",

@@ -1,12 +1,14 @@
 from fastapi import APIRouter, HTTPException, Request
 from typing import List
-import time
-import DB.db_func as db
+import httpx
+import os
 from .models_api import Task, Category
 from logger import api_logger as logger
-from sqlalchemy.exc import IntegrityError
 
 router = APIRouter()
+
+# The internal DB service URL (accessible inside Docker/K8s)
+DB_URL = os.getenv("DB_API_URL", "http://db-service:8001")
 
 def error_response(status_code: int, detail: str, request: Request):
     logger.error(
