@@ -3,7 +3,7 @@ from pydantic import BaseModel
 import datetime
 
 class Status(str, Enum):
-    null = "null"
+    open = "open"
     pending = "pending"
     in_progress = "in_progress"
     done = "done"
@@ -12,7 +12,7 @@ class Task(BaseModel):
     task_id: int | None = None
     created_at: datetime.datetime | None = None
     category_name: str
-    status: Status
+    status: Status = Status.open
     deadline: datetime.datetime | None = None
     description: str | None = None
 

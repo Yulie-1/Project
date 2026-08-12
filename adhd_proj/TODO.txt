@@ -15,15 +15,10 @@ In the future:
     - Add authentication and authorization
     - Add users
     - Chat?
-    - Add database connection
-    - Divide tasks by category
     - Implement the "just a moment" technique?
-    - Different GET for tasks and statistics
-    - Time tracking for tasks
+    - Statistics
     - Until there is an agent - start and end of work hours
-    - Every task completion is logged with date/time.
-    - Create logs
     - Archive tasks
-
+    - Logs - split files when reaches size
 
 """

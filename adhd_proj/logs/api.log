@@ -19,3 +19,424 @@
 {"message": "Creating category", "url": null, "method": null, "timestamp": "2026-01-27 20:41:24,417", "logger_name": "api_logger"}
 {"message": "Creating task", "url": null, "method": null, "timestamp": "2026-01-27 20:43:13,874", "logger_name": "api_logger"}
 {"message": "Reading tasks", "url": null, "method": null, "timestamp": "2026-01-27 20:43:39,559", "logger_name": "api_logger"}
+{"message": "Creating category", "url": null, "method": null, "timestamp": "2026-08-10 11:26:01,879", "logger_name": "api_logger"}
+{"message": "Reading categories", "url": null, "method": null, "timestamp": "2026-08-10 11:26:02,092", "logger_name": "api_logger"}
+{"message": "Creating category", "url": null, "method": null, "timestamp": "2026-08-10 11:26:02,263", "logger_name": "api_logger"}
+{"message": "IntegrityError creating category: (psycopg.errors.UniqueViolation) duplicate key value violates unique constraint \"categories_pkey\"\nDETAIL:  Key (category_name)=(_test_integration) already exists.\n[SQL: INSERT INTO categories (category_name) VALUES (%(category_name)s::VARCHAR)]\n[parameters: {'category_name': '_test_integration'}]\n(Background on this error at: https://sqlalche.me/e/20/gkpj)", "url": null, "method": null, "timestamp": "2026-08-10 11:26:02,302", "logger_name": "api_logger"}
+{"message": "HTTPerror 409: Category '_test_integration' already exists", "url": null, "method": null, "timestamp": "2026-08-10 11:26:02,302", "logger_name": "api_logger"}
+{"message": "Deleting category", "url": null, "method": null, "timestamp": "2026-08-10 11:26:02,306", "logger_name": "api_logger"}
+{"message": "Category '_does_not_exist_xyz' not found for deletion", "url": null, "method": null, "timestamp": "2026-08-10 11:26:02,342", "logger_name": "api_logger"}
+{"message": "HTTPerror 404: Category not found", "url": null, "method": null, "timestamp": "2026-08-10 11:26:02,342", "logger_name": "api_logger"}
+{"message": "Error deleting category: 404: Category not found", "url": null, "method": null, "timestamp": "2026-08-10 11:26:02,342", "logger_name": "api_logger"}
+{"message": "HTTPerror 500: Error deleting category: 404: Category not found", "url": null, "method": null, "timestamp": "2026-08-10 11:26:02,342", "logger_name": "api_logger"}
+{"message": "Reading tasks", "url": null, "method": null, "timestamp": "2026-08-10 11:26:02,431", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-08-10 11:26:02,583", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-08-10 11:26:02,633", "logger_name": "api_logger"}
+{"message": "IntegrityError creating task: (psycopg.errors.ForeignKeyViolation) insert or update on table \"tasks\" violates foreign key constraint \"tasks_category_name_fkey\"\nDETAIL:  Key (category_name)=(_nonexistent_cat_xyz) is not present in table \"categories\".\n[SQL: INSERT INTO tasks (category_name, deadline, status, description) VALUES (%(category_name)s::VARCHAR, %(deadline)s::TIMESTAMP WITHOUT TIME ZONE, %(status)s::VARCHAR, %(description)s::VARCHAR) RETURNING tasks.task_id, tasks.created_at]\n[parameters: {'category_name': '_nonexistent_cat_xyz', 'deadline': None, 'status': 'open', 'description': None}]\n(Background on this error at: https://sqlalche.me/e/20/gkpj)", "url": null, "method": null, "timestamp": "2026-08-10 11:26:02,784", "logger_name": "api_logger"}
+{"message": "HTTPerror 409: Constraint violation (e.g. invalid category)", "url": null, "method": null, "timestamp": "2026-08-10 11:26:02,784", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-08-10 11:26:02,788", "logger_name": "api_logger"}
+{"message": "Updating task", "url": null, "method": null, "timestamp": "2026-08-10 11:26:02,934", "logger_name": "api_logger"}
+{"message": "Unexpected error updating task: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)", "url": null, "method": null, "timestamp": "2026-08-10 11:26:02,969", "logger_name": "api_logger"}
+{"message": "HTTPerror 500: Error updating task: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)", "url": null, "method": null, "timestamp": "2026-08-10 11:26:02,969", "logger_name": "api_logger"}
+{"message": "Updating task", "url": null, "method": null, "timestamp": "2026-08-10 11:26:02,978", "logger_name": "api_logger"}
+{"message": "Task 999999 not found for update", "url": null, "method": null, "timestamp": "2026-08-10 11:26:03,118", "logger_name": "api_logger"}
+{"message": "HTTPerror 404: Task not found", "url": null, "method": null, "timestamp": "2026-08-10 11:26:03,118", "logger_name": "api_logger"}
+{"message": "Unexpected error updating task: 404: Task not found", "url": null, "method": null, "timestamp": "2026-08-10 11:26:03,118", "logger_name": "api_logger"}
+{"message": "HTTPerror 500: Error updating task: 404: Task not found", "url": null, "method": null, "timestamp": "2026-08-10 11:26:03,118", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-08-10 11:26:03,127", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 11:26:03,244", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 11:26:03,288", "logger_name": "api_logger"}
+{"message": "Task 999999 not found for deletion", "url": null, "method": null, "timestamp": "2026-08-10 11:26:03,289", "logger_name": "api_logger"}
+{"message": "HTTPerror 404: Task not found", "url": null, "method": null, "timestamp": "2026-08-10 11:26:03,289", "logger_name": "api_logger"}
+{"message": "Error deleting task: 404: Task not found", "url": null, "method": null, "timestamp": "2026-08-10 11:26:03,290", "logger_name": "api_logger"}
+{"message": "HTTPerror 500: Error deleting task: 404: Task not found", "url": null, "method": null, "timestamp": "2026-08-10 11:26:03,290", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-08-10 11:26:03,297", "logger_name": "api_logger"}
+{"message": "Updating task", "url": null, "method": null, "timestamp": "2026-08-10 11:26:03,451", "logger_name": "api_logger"}
+{"message": "Unexpected error updating task: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)", "url": null, "method": null, "timestamp": "2026-08-10 11:26:03,483", "logger_name": "api_logger"}
+{"message": "HTTPerror 500: Error updating task: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)", "url": null, "method": null, "timestamp": "2026-08-10 11:26:03,484", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-08-10 11:26:03,492", "logger_name": "api_logger"}
+{"message": "Updating task", "url": null, "method": null, "timestamp": "2026-08-10 11:26:03,637", "logger_name": "api_logger"}
+{"message": "Unexpected error updating task: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)", "url": null, "method": null, "timestamp": "2026-08-10 11:26:03,670", "logger_name": "api_logger"}
+{"message": "HTTPerror 500: Error updating task: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)", "url": null, "method": null, "timestamp": "2026-08-10 11:26:03,670", "logger_name": "api_logger"}
+{"message": "Updating task", "url": null, "method": null, "timestamp": "2026-08-10 11:26:03,670", "logger_name": "api_logger"}
+{"message": "Unexpected error updating task: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)", "url": null, "method": null, "timestamp": "2026-08-10 11:26:03,702", "logger_name": "api_logger"}
+{"message": "HTTPerror 500: Error updating task: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)", "url": null, "method": null, "timestamp": "2026-08-10 11:26:03,702", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-08-10 11:26:03,723", "logger_name": "api_logger"}
+{"message": "Updating task", "url": null, "method": null, "timestamp": "2026-08-10 11:26:03,763", "logger_name": "api_logger"}
+{"message": "Unexpected error updating task: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)", "url": null, "method": null, "timestamp": "2026-08-10 11:26:03,796", "logger_name": "api_logger"}
+{"message": "HTTPerror 500: Error updating task: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)", "url": null, "method": null, "timestamp": "2026-08-10 11:26:03,796", "logger_name": "api_logger"}
+{"message": "Updating task", "url": null, "method": null, "timestamp": "2026-08-10 11:26:03,797", "logger_name": "api_logger"}
+{"message": "Unexpected error updating task: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)", "url": null, "method": null, "timestamp": "2026-08-10 11:26:03,829", "logger_name": "api_logger"}
+{"message": "HTTPerror 500: Error updating task: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)", "url": null, "method": null, "timestamp": "2026-08-10 11:26:03,829", "logger_name": "api_logger"}
+{"message": "Creating category", "url": null, "method": null, "timestamp": "2026-08-10 11:26:50,759", "logger_name": "api_logger"}
+{"message": "IntegrityError creating category: (psycopg.errors.UniqueViolation) duplicate key value violates unique constraint \"categories_pkey\"\nDETAIL:  Key (category_name)=(_test_integration) already exists.\n[SQL: INSERT INTO categories (category_name) VALUES (%(category_name)s::VARCHAR)]\n[parameters: {'category_name': '_test_integration'}]\n(Background on this error at: https://sqlalche.me/e/20/gkpj)", "url": null, "method": null, "timestamp": "2026-08-10 11:26:50,853", "logger_name": "api_logger"}
+{"message": "HTTPerror 409: Category '_test_integration' already exists", "url": null, "method": null, "timestamp": "2026-08-10 11:26:50,854", "logger_name": "api_logger"}
+{"message": "Reading categories", "url": null, "method": null, "timestamp": "2026-08-10 11:26:50,855", "logger_name": "api_logger"}
+{"message": "Creating category", "url": null, "method": null, "timestamp": "2026-08-10 11:26:50,893", "logger_name": "api_logger"}
+{"message": "IntegrityError creating category: (psycopg.errors.UniqueViolation) duplicate key value violates unique constraint \"categories_pkey\"\nDETAIL:  Key (category_name)=(_test_integration) already exists.\n[SQL: INSERT INTO categories (category_name) VALUES (%(category_name)s::VARCHAR)]\n[parameters: {'category_name': '_test_integration'}]\n(Background on this error at: https://sqlalche.me/e/20/gkpj)", "url": null, "method": null, "timestamp": "2026-08-10 11:26:51,036", "logger_name": "api_logger"}
+{"message": "HTTPerror 409: Category '_test_integration' already exists", "url": null, "method": null, "timestamp": "2026-08-10 11:26:51,036", "logger_name": "api_logger"}
+{"message": "Deleting category", "url": null, "method": null, "timestamp": "2026-08-10 11:26:51,040", "logger_name": "api_logger"}
+{"message": "Category '_does_not_exist_xyz' not found for deletion", "url": null, "method": null, "timestamp": "2026-08-10 11:26:51,072", "logger_name": "api_logger"}
+{"message": "HTTPerror 404: Category not found", "url": null, "method": null, "timestamp": "2026-08-10 11:26:51,072", "logger_name": "api_logger"}
+{"message": "Error deleting category: 404: Category not found", "url": null, "method": null, "timestamp": "2026-08-10 11:26:51,072", "logger_name": "api_logger"}
+{"message": "HTTPerror 500: Error deleting category: 404: Category not found", "url": null, "method": null, "timestamp": "2026-08-10 11:26:51,073", "logger_name": "api_logger"}
+{"message": "Reading tasks", "url": null, "method": null, "timestamp": "2026-08-10 11:26:51,158", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-08-10 11:26:51,198", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-08-10 11:26:51,242", "logger_name": "api_logger"}
+{"message": "IntegrityError creating task: (psycopg.errors.ForeignKeyViolation) insert or update on table \"tasks\" violates foreign key constraint \"tasks_category_name_fkey\"\nDETAIL:  Key (category_name)=(_nonexistent_cat_xyz) is not present in table \"categories\".\n[SQL: INSERT INTO tasks (category_name, deadline, status, description) VALUES (%(category_name)s::VARCHAR, %(deadline)s::TIMESTAMP WITHOUT TIME ZONE, %(status)s::VARCHAR, %(description)s::VARCHAR) RETURNING tasks.task_id, tasks.created_at]\n[parameters: {'category_name': '_nonexistent_cat_xyz', 'deadline': None, 'status': 'open', 'description': None}]\n(Background on this error at: https://sqlalche.me/e/20/gkpj)", "url": null, "method": null, "timestamp": "2026-08-10 11:26:51,276", "logger_name": "api_logger"}
+{"message": "HTTPerror 409: Constraint violation (e.g. invalid category)", "url": null, "method": null, "timestamp": "2026-08-10 11:26:51,276", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-08-10 11:26:51,281", "logger_name": "api_logger"}
+{"message": "Updating task", "url": null, "method": null, "timestamp": "2026-08-10 11:26:51,318", "logger_name": "api_logger"}
+{"message": "Unexpected error updating task: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)", "url": null, "method": null, "timestamp": "2026-08-10 11:26:51,453", "logger_name": "api_logger"}
+{"message": "HTTPerror 500: Error updating task: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)", "url": null, "method": null, "timestamp": "2026-08-10 11:26:51,453", "logger_name": "api_logger"}
+{"message": "Updating task", "url": null, "method": null, "timestamp": "2026-08-10 11:26:51,462", "logger_name": "api_logger"}
+{"message": "Task 999999 not found for update", "url": null, "method": null, "timestamp": "2026-08-10 11:26:51,610", "logger_name": "api_logger"}
+{"message": "HTTPerror 404: Task not found", "url": null, "method": null, "timestamp": "2026-08-10 11:26:51,610", "logger_name": "api_logger"}
+{"message": "Unexpected error updating task: 404: Task not found", "url": null, "method": null, "timestamp": "2026-08-10 11:26:51,610", "logger_name": "api_logger"}
+{"message": "HTTPerror 500: Error updating task: 404: Task not found", "url": null, "method": null, "timestamp": "2026-08-10 11:26:51,611", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-08-10 11:26:51,619", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 11:26:51,657", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 11:26:51,698", "logger_name": "api_logger"}
+{"message": "Task 999999 not found for deletion", "url": null, "method": null, "timestamp": "2026-08-10 11:26:51,701", "logger_name": "api_logger"}
+{"message": "HTTPerror 404: Task not found", "url": null, "method": null, "timestamp": "2026-08-10 11:26:51,701", "logger_name": "api_logger"}
+{"message": "Error deleting task: 404: Task not found", "url": null, "method": null, "timestamp": "2026-08-10 11:26:51,701", "logger_name": "api_logger"}
+{"message": "HTTPerror 500: Error deleting task: 404: Task not found", "url": null, "method": null, "timestamp": "2026-08-10 11:26:51,701", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-08-10 11:26:51,707", "logger_name": "api_logger"}
+{"message": "Updating task", "url": null, "method": null, "timestamp": "2026-08-10 11:26:51,846", "logger_name": "api_logger"}
+{"message": "Unexpected error updating task: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)", "url": null, "method": null, "timestamp": "2026-08-10 11:26:51,880", "logger_name": "api_logger"}
+{"message": "HTTPerror 500: Error updating task: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)", "url": null, "method": null, "timestamp": "2026-08-10 11:26:51,880", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-08-10 11:26:51,888", "logger_name": "api_logger"}
+{"message": "Updating task", "url": null, "method": null, "timestamp": "2026-08-10 11:26:52,035", "logger_name": "api_logger"}
+{"message": "Unexpected error updating task: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)", "url": null, "method": null, "timestamp": "2026-08-10 11:26:52,171", "logger_name": "api_logger"}
+{"message": "HTTPerror 500: Error updating task: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)", "url": null, "method": null, "timestamp": "2026-08-10 11:26:52,171", "logger_name": "api_logger"}
+{"message": "Updating task", "url": null, "method": null, "timestamp": "2026-08-10 11:26:52,172", "logger_name": "api_logger"}
+{"message": "Unexpected error updating task: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)", "url": null, "method": null, "timestamp": "2026-08-10 11:26:52,203", "logger_name": "api_logger"}
+{"message": "HTTPerror 500: Error updating task: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)", "url": null, "method": null, "timestamp": "2026-08-10 11:26:52,203", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-08-10 11:26:52,211", "logger_name": "api_logger"}
+{"message": "Creating category", "url": null, "method": null, "timestamp": "2026-08-10 11:27:35,112", "logger_name": "api_logger"}
+{"message": "IntegrityError creating category: (psycopg.errors.UniqueViolation) duplicate key value violates unique constraint \"categories_pkey\"\nDETAIL:  Key (category_name)=(_test_integration) already exists.\n[SQL: INSERT INTO categories (category_name) VALUES (%(category_name)s::VARCHAR)]\n[parameters: {'category_name': '_test_integration'}]\n(Background on this error at: https://sqlalche.me/e/20/gkpj)", "url": null, "method": null, "timestamp": "2026-08-10 11:27:35,187", "logger_name": "api_logger"}
+{"message": "HTTPerror 409: Category '_test_integration' already exists", "url": null, "method": null, "timestamp": "2026-08-10 11:27:35,187", "logger_name": "api_logger"}
+{"message": "Reading categories", "url": null, "method": null, "timestamp": "2026-08-10 11:27:35,189", "logger_name": "api_logger"}
+{"message": "Creating category", "url": null, "method": null, "timestamp": "2026-08-10 11:27:35,228", "logger_name": "api_logger"}
+{"message": "IntegrityError creating category: (psycopg.errors.UniqueViolation) duplicate key value violates unique constraint \"categories_pkey\"\nDETAIL:  Key (category_name)=(_test_integration) already exists.\n[SQL: INSERT INTO categories (category_name) VALUES (%(category_name)s::VARCHAR)]\n[parameters: {'category_name': '_test_integration'}]\n(Background on this error at: https://sqlalche.me/e/20/gkpj)", "url": null, "method": null, "timestamp": "2026-08-10 11:27:35,359", "logger_name": "api_logger"}
+{"message": "HTTPerror 409: Category '_test_integration' already exists", "url": null, "method": null, "timestamp": "2026-08-10 11:27:35,359", "logger_name": "api_logger"}
+{"message": "Deleting category", "url": null, "method": null, "timestamp": "2026-08-10 11:27:35,363", "logger_name": "api_logger"}
+{"message": "Category '_does_not_exist_xyz' not found for deletion", "url": null, "method": null, "timestamp": "2026-08-10 11:27:35,395", "logger_name": "api_logger"}
+{"message": "HTTPerror 404: Category not found", "url": null, "method": null, "timestamp": "2026-08-10 11:27:35,395", "logger_name": "api_logger"}
+{"message": "Error deleting category: 404: Category not found", "url": null, "method": null, "timestamp": "2026-08-10 11:27:35,396", "logger_name": "api_logger"}
+{"message": "HTTPerror 500: Error deleting category: 404: Category not found", "url": null, "method": null, "timestamp": "2026-08-10 11:27:35,396", "logger_name": "api_logger"}
+{"message": "Reading tasks", "url": null, "method": null, "timestamp": "2026-08-10 11:27:35,484", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-08-10 11:27:35,524", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-08-10 11:27:35,568", "logger_name": "api_logger"}
+{"message": "IntegrityError creating task: (psycopg.errors.ForeignKeyViolation) insert or update on table \"tasks\" violates foreign key constraint \"tasks_category_name_fkey\"\nDETAIL:  Key (category_name)=(_nonexistent_cat_xyz) is not present in table \"categories\".\n[SQL: INSERT INTO tasks (category_name, deadline, status, description) VALUES (%(category_name)s::VARCHAR, %(deadline)s::TIMESTAMP WITHOUT TIME ZONE, %(status)s::VARCHAR, %(description)s::VARCHAR) RETURNING tasks.task_id, tasks.created_at]\n[parameters: {'category_name': '_nonexistent_cat_xyz', 'deadline': None, 'status': 'open', 'description': None}]\n(Background on this error at: https://sqlalche.me/e/20/gkpj)", "url": null, "method": null, "timestamp": "2026-08-10 11:27:35,601", "logger_name": "api_logger"}
+{"message": "HTTPerror 409: Constraint violation (e.g. invalid category)", "url": null, "method": null, "timestamp": "2026-08-10 11:27:35,602", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-08-10 11:27:35,606", "logger_name": "api_logger"}
+{"message": "Updating task", "url": null, "method": null, "timestamp": "2026-08-10 11:27:35,755", "logger_name": "api_logger"}
+{"message": "Unexpected error updating task: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)", "url": null, "method": null, "timestamp": "2026-08-10 11:27:35,791", "logger_name": "api_logger"}
+{"message": "HTTPerror 500: Error updating task: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)", "url": null, "method": null, "timestamp": "2026-08-10 11:27:35,791", "logger_name": "api_logger"}
+{"message": "Updating task", "url": null, "method": null, "timestamp": "2026-08-10 11:27:35,800", "logger_name": "api_logger"}
+{"message": "Task 999999 not found for update", "url": null, "method": null, "timestamp": "2026-08-10 11:27:35,936", "logger_name": "api_logger"}
+{"message": "HTTPerror 404: Task not found", "url": null, "method": null, "timestamp": "2026-08-10 11:27:35,937", "logger_name": "api_logger"}
+{"message": "Unexpected error updating task: 404: Task not found", "url": null, "method": null, "timestamp": "2026-08-10 11:27:35,937", "logger_name": "api_logger"}
+{"message": "HTTPerror 500: Error updating task: 404: Task not found", "url": null, "method": null, "timestamp": "2026-08-10 11:27:35,937", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-08-10 11:27:35,945", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 11:27:35,983", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 11:27:36,025", "logger_name": "api_logger"}
+{"message": "Task 999999 not found for deletion", "url": null, "method": null, "timestamp": "2026-08-10 11:27:36,027", "logger_name": "api_logger"}
+{"message": "HTTPerror 404: Task not found", "url": null, "method": null, "timestamp": "2026-08-10 11:27:36,027", "logger_name": "api_logger"}
+{"message": "Error deleting task: 404: Task not found", "url": null, "method": null, "timestamp": "2026-08-10 11:27:36,027", "logger_name": "api_logger"}
+{"message": "HTTPerror 500: Error deleting task: 404: Task not found", "url": null, "method": null, "timestamp": "2026-08-10 11:27:36,027", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-08-10 11:27:36,034", "logger_name": "api_logger"}
+{"message": "Updating task", "url": null, "method": null, "timestamp": "2026-08-10 11:27:36,070", "logger_name": "api_logger"}
+{"message": "Unexpected error updating task: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)", "url": null, "method": null, "timestamp": "2026-08-10 11:27:36,101", "logger_name": "api_logger"}
+{"message": "HTTPerror 500: Error updating task: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)", "url": null, "method": null, "timestamp": "2026-08-10 11:27:36,101", "logger_name": "api_logger"}
+{"message": "Reading tasks", "url": null, "method": null, "timestamp": "2026-08-10 11:27:36,108", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 11:27:36,246", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 11:27:36,284", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 11:27:36,288", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 11:27:36,292", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 11:27:36,295", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 11:27:36,299", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 11:27:36,304", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 11:27:36,307", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 11:27:36,311", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 11:27:36,314", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 11:27:36,318", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 11:27:36,322", "logger_name": "api_logger"}
+{"message": "Deleting category", "url": null, "method": null, "timestamp": "2026-08-10 11:27:36,326", "logger_name": "api_logger"}
+{"message": "Creating category", "url": null, "method": null, "timestamp": "2026-08-10 11:31:06,438", "logger_name": "api_logger"}
+{"message": "Reading categories", "url": null, "method": null, "timestamp": "2026-08-10 11:31:06,522", "logger_name": "api_logger"}
+{"message": "Creating category", "url": null, "method": null, "timestamp": "2026-08-10 11:31:06,528", "logger_name": "api_logger"}
+{"message": "IntegrityError creating category: (psycopg.errors.UniqueViolation) duplicate key value violates unique constraint \"categories_pkey\"\nDETAIL:  Key (category_name)=(_test_integration) already exists.\n[SQL: INSERT INTO categories (category_name) VALUES (%(category_name)s::VARCHAR)]\n[parameters: {'category_name': '_test_integration'}]\n(Background on this error at: https://sqlalche.me/e/20/gkpj)", "url": null, "method": null, "timestamp": "2026-08-10 11:31:06,531", "logger_name": "api_logger"}
+{"message": "HTTPerror 409: Category '_test_integration' already exists", "url": null, "method": null, "timestamp": "2026-08-10 11:31:06,532", "logger_name": "api_logger"}
+{"message": "Deleting category", "url": null, "method": null, "timestamp": "2026-08-10 11:31:06,534", "logger_name": "api_logger"}
+{"message": "Category '_does_not_exist_xyz' not found for deletion", "url": null, "method": null, "timestamp": "2026-08-10 11:31:06,537", "logger_name": "api_logger"}
+{"message": "HTTPerror 404: Category not found", "url": null, "method": null, "timestamp": "2026-08-10 11:31:06,537", "logger_name": "api_logger"}
+{"message": "Reading tasks", "url": null, "method": null, "timestamp": "2026-08-10 11:31:06,540", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-08-10 11:31:06,547", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-08-10 11:31:06,556", "logger_name": "api_logger"}
+{"message": "IntegrityError creating task: (psycopg.errors.ForeignKeyViolation) insert or update on table \"tasks\" violates foreign key constraint \"tasks_category_name_fkey\"\nDETAIL:  Key (category_name)=(_nonexistent_cat_xyz) is not present in table \"categories\".\n[SQL: INSERT INTO tasks (category_name, deadline, status, description) VALUES (%(category_name)s::VARCHAR, %(deadline)s::TIMESTAMP WITHOUT TIME ZONE, %(status)s::VARCHAR, %(description)s::VARCHAR) RETURNING tasks.task_id, tasks.created_at]\n[parameters: {'category_name': '_nonexistent_cat_xyz', 'deadline': None, 'status': 'open', 'description': None}]\n(Background on this error at: https://sqlalche.me/e/20/gkpj)", "url": null, "method": null, "timestamp": "2026-08-10 11:31:06,558", "logger_name": "api_logger"}
+{"message": "HTTPerror 409: Constraint violation (e.g. invalid category)", "url": null, "method": null, "timestamp": "2026-08-10 11:31:06,559", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-08-10 11:31:06,561", "logger_name": "api_logger"}
+{"message": "Updating task", "url": null, "method": null, "timestamp": "2026-08-10 11:31:06,566", "logger_name": "api_logger"}
+{"message": "Unexpected error updating task: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)", "url": null, "method": null, "timestamp": "2026-08-10 11:31:06,569", "logger_name": "api_logger"}
+{"message": "HTTPerror 500: Error updating task: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)", "url": null, "method": null, "timestamp": "2026-08-10 11:31:06,570", "logger_name": "api_logger"}
+{"message": "Updating task", "url": null, "method": null, "timestamp": "2026-08-10 11:31:06,656", "logger_name": "api_logger"}
+{"message": "Task 999999 not found for update", "url": null, "method": null, "timestamp": "2026-08-10 11:31:06,659", "logger_name": "api_logger"}
+{"message": "HTTPerror 404: Task not found", "url": null, "method": null, "timestamp": "2026-08-10 11:31:06,659", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-08-10 11:31:06,662", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 11:31:06,669", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 11:31:06,677", "logger_name": "api_logger"}
+{"message": "Task 999999 not found for deletion", "url": null, "method": null, "timestamp": "2026-08-10 11:31:06,679", "logger_name": "api_logger"}
+{"message": "HTTPerror 404: Task not found", "url": null, "method": null, "timestamp": "2026-08-10 11:31:06,680", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-08-10 11:31:06,682", "logger_name": "api_logger"}
+{"message": "Updating task", "url": null, "method": null, "timestamp": "2026-08-10 11:31:06,686", "logger_name": "api_logger"}
+{"message": "Unexpected error updating task: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)", "url": null, "method": null, "timestamp": "2026-08-10 11:31:06,689", "logger_name": "api_logger"}
+{"message": "HTTPerror 500: Error updating task: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)", "url": null, "method": null, "timestamp": "2026-08-10 11:31:06,689", "logger_name": "api_logger"}
+{"message": "Reading tasks", "url": null, "method": null, "timestamp": "2026-08-10 11:31:06,697", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 11:31:06,699", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 11:31:06,704", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 11:31:06,708", "logger_name": "api_logger"}
+{"message": "Deleting category", "url": null, "method": null, "timestamp": "2026-08-10 11:31:06,712", "logger_name": "api_logger"}
+{"message": "Creating category", "url": null, "method": null, "timestamp": "2026-08-10 11:33:54,790", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-08-10 11:33:54,885", "logger_name": "api_logger"}
+{"message": "Updating task", "url": null, "method": null, "timestamp": "2026-08-10 11:33:54,895", "logger_name": "api_logger"}
+{"message": "Unexpected error updating task: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)", "url": null, "method": null, "timestamp": "2026-08-10 11:33:54,900", "logger_name": "api_logger"}
+{"message": "HTTPerror 500: Error updating task: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)", "url": null, "method": null, "timestamp": "2026-08-10 11:33:54,900", "logger_name": "api_logger"}
+{"message": "Reading tasks", "url": null, "method": null, "timestamp": "2026-08-10 11:33:54,988", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 11:33:54,993", "logger_name": "api_logger"}
+{"message": "Deleting category", "url": null, "method": null, "timestamp": "2026-08-10 11:33:55,002", "logger_name": "api_logger"}
+{"message": "Creating category", "url": null, "method": null, "timestamp": "2026-08-10 11:38:07,776", "logger_name": "api_logger"}
+{"message": "Reading categories", "url": null, "method": null, "timestamp": "2026-08-10 11:38:07,859", "logger_name": "api_logger"}
+{"message": "Creating category", "url": null, "method": null, "timestamp": "2026-08-10 11:38:07,865", "logger_name": "api_logger"}
+{"message": "IntegrityError creating category: (psycopg.errors.UniqueViolation) duplicate key value violates unique constraint \"categories_pkey\"\nDETAIL:  Key (category_name)=(_test_integration) already exists.\n[SQL: INSERT INTO categories (category_name) VALUES (%(category_name)s::VARCHAR)]\n[parameters: {'category_name': '_test_integration'}]\n(Background on this error at: https://sqlalche.me/e/20/gkpj)", "url": null, "method": null, "timestamp": "2026-08-10 11:38:07,868", "logger_name": "api_logger"}
+{"message": "HTTPerror 409: Category '_test_integration' already exists", "url": null, "method": null, "timestamp": "2026-08-10 11:38:07,868", "logger_name": "api_logger"}
+{"message": "Deleting category", "url": null, "method": null, "timestamp": "2026-08-10 11:38:07,871", "logger_name": "api_logger"}
+{"message": "Category '_does_not_exist_xyz' not found for deletion", "url": null, "method": null, "timestamp": "2026-08-10 11:38:07,874", "logger_name": "api_logger"}
+{"message": "HTTPerror 404: Category not found", "url": null, "method": null, "timestamp": "2026-08-10 11:38:07,874", "logger_name": "api_logger"}
+{"message": "Reading tasks", "url": null, "method": null, "timestamp": "2026-08-10 11:38:07,877", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-08-10 11:38:07,884", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-08-10 11:38:07,896", "logger_name": "api_logger"}
+{"message": "IntegrityError creating task: (psycopg.errors.ForeignKeyViolation) insert or update on table \"tasks\" violates foreign key constraint \"tasks_category_name_fkey\"\nDETAIL:  Key (category_name)=(_nonexistent_cat_xyz) is not present in table \"categories\".\n[SQL: INSERT INTO tasks (category_name, deadline, status, description) VALUES (%(category_name)s::VARCHAR, %(deadline)s::TIMESTAMP WITHOUT TIME ZONE, %(status)s::VARCHAR, %(description)s::VARCHAR) RETURNING tasks.task_id, tasks.created_at]\n[parameters: {'category_name': '_nonexistent_cat_xyz', 'deadline': None, 'status': 'open', 'description': None}]\n(Background on this error at: https://sqlalche.me/e/20/gkpj)", "url": null, "method": null, "timestamp": "2026-08-10 11:38:07,899", "logger_name": "api_logger"}
+{"message": "HTTPerror 409: Constraint violation (e.g. invalid category)", "url": null, "method": null, "timestamp": "2026-08-10 11:38:07,900", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-08-10 11:38:07,902", "logger_name": "api_logger"}
+{"message": "Updating task", "url": null, "method": null, "timestamp": "2026-08-10 11:38:07,908", "logger_name": "api_logger"}
+{"message": "Updating task", "url": null, "method": null, "timestamp": "2026-08-10 11:38:08,245", "logger_name": "api_logger"}
+{"message": "Task 999999 not found for update", "url": null, "method": null, "timestamp": "2026-08-10 11:38:08,249", "logger_name": "api_logger"}
+{"message": "HTTPerror 404: Task not found", "url": null, "method": null, "timestamp": "2026-08-10 11:38:08,249", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-08-10 11:38:08,252", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 11:38:08,259", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 11:38:08,267", "logger_name": "api_logger"}
+{"message": "Task 999999 not found for deletion", "url": null, "method": null, "timestamp": "2026-08-10 11:38:08,270", "logger_name": "api_logger"}
+{"message": "HTTPerror 404: Task not found", "url": null, "method": null, "timestamp": "2026-08-10 11:38:08,270", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-08-10 11:38:08,273", "logger_name": "api_logger"}
+{"message": "Updating task", "url": null, "method": null, "timestamp": "2026-08-10 11:38:08,278", "logger_name": "api_logger"}
+{"message": "Reading tasks", "url": null, "method": null, "timestamp": "2026-08-10 11:38:08,440", "logger_name": "api_logger"}
+{"message": "Creating category", "url": null, "method": null, "timestamp": "2026-08-10 11:42:57,364", "logger_name": "api_logger"}
+{"message": "IntegrityError creating category: (psycopg.errors.UniqueViolation) duplicate key value violates unique constraint \"categories_pkey\"\nDETAIL:  Key (category_name)=(_test_integration) already exists.\n[SQL: INSERT INTO categories (category_name) VALUES (%(category_name)s::VARCHAR)]\n[parameters: {'category_name': '_test_integration'}]\n(Background on this error at: https://sqlalche.me/e/20/gkpj)", "url": null, "method": null, "timestamp": "2026-08-10 11:42:57,449", "logger_name": "api_logger"}
+{"message": "HTTPerror 409: Category '_test_integration' already exists", "url": null, "method": null, "timestamp": "2026-08-10 11:42:57,449", "logger_name": "api_logger"}
+{"message": "Reading categories", "url": null, "method": null, "timestamp": "2026-08-10 11:42:57,451", "logger_name": "api_logger"}
+{"message": "Creating category", "url": null, "method": null, "timestamp": "2026-08-10 11:42:57,459", "logger_name": "api_logger"}
+{"message": "IntegrityError creating category: (psycopg.errors.UniqueViolation) duplicate key value violates unique constraint \"categories_pkey\"\nDETAIL:  Key (category_name)=(_test_integration) already exists.\n[SQL: INSERT INTO categories (category_name) VALUES (%(category_name)s::VARCHAR)]\n[parameters: {'category_name': '_test_integration'}]\n(Background on this error at: https://sqlalche.me/e/20/gkpj)", "url": null, "method": null, "timestamp": "2026-08-10 11:42:57,462", "logger_name": "api_logger"}
+{"message": "HTTPerror 409: Category '_test_integration' already exists", "url": null, "method": null, "timestamp": "2026-08-10 11:42:57,462", "logger_name": "api_logger"}
+{"message": "Deleting category", "url": null, "method": null, "timestamp": "2026-08-10 11:42:57,464", "logger_name": "api_logger"}
+{"message": "Category '_does_not_exist_xyz' not found for deletion", "url": null, "method": null, "timestamp": "2026-08-10 11:42:57,468", "logger_name": "api_logger"}
+{"message": "HTTPerror 404: Category not found", "url": null, "method": null, "timestamp": "2026-08-10 11:42:57,468", "logger_name": "api_logger"}
+{"message": "Reading tasks", "url": null, "method": null, "timestamp": "2026-08-10 11:42:57,471", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-08-10 11:42:57,682", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-08-10 11:42:57,695", "logger_name": "api_logger"}
+{"message": "IntegrityError creating task: (psycopg.errors.ForeignKeyViolation) insert or update on table \"tasks\" violates foreign key constraint \"tasks_category_name_fkey\"\nDETAIL:  Key (category_name)=(_nonexistent_cat_xyz) is not present in table \"categories\".\n[SQL: INSERT INTO tasks (category_name, deadline, status, description) VALUES (%(category_name)s::VARCHAR, %(deadline)s::TIMESTAMP WITHOUT TIME ZONE, %(status)s::VARCHAR, %(description)s::VARCHAR) RETURNING tasks.task_id, tasks.created_at]\n[parameters: {'category_name': '_nonexistent_cat_xyz', 'deadline': None, 'status': 'open', 'description': None}]\n(Background on this error at: https://sqlalche.me/e/20/gkpj)", "url": null, "method": null, "timestamp": "2026-08-10 11:42:57,698", "logger_name": "api_logger"}
+{"message": "HTTPerror 409: Constraint violation (e.g. invalid category)", "url": null, "method": null, "timestamp": "2026-08-10 11:42:57,699", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-08-10 11:42:57,701", "logger_name": "api_logger"}
+{"message": "Updating task", "url": null, "method": null, "timestamp": "2026-08-10 11:42:57,706", "logger_name": "api_logger"}
+{"message": "Updating task", "url": null, "method": null, "timestamp": "2026-08-10 11:42:57,721", "logger_name": "api_logger"}
+{"message": "Task 999999 not found for update", "url": null, "method": null, "timestamp": "2026-08-10 11:42:57,724", "logger_name": "api_logger"}
+{"message": "HTTPerror 404: Task not found", "url": null, "method": null, "timestamp": "2026-08-10 11:42:57,724", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-08-10 11:42:57,727", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 11:42:57,731", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 11:42:57,739", "logger_name": "api_logger"}
+{"message": "Task 999999 not found for deletion", "url": null, "method": null, "timestamp": "2026-08-10 11:42:57,742", "logger_name": "api_logger"}
+{"message": "HTTPerror 404: Task not found", "url": null, "method": null, "timestamp": "2026-08-10 11:42:57,742", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-08-10 11:42:57,746", "logger_name": "api_logger"}
+{"message": "Updating task", "url": null, "method": null, "timestamp": "2026-08-10 11:42:57,752", "logger_name": "api_logger"}
+{"message": "Reading tasks", "url": null, "method": null, "timestamp": "2026-08-10 11:42:57,764", "logger_name": "api_logger"}
+{"message": "Creating category", "url": null, "method": null, "timestamp": "2026-08-10 12:04:37,594", "logger_name": "api_logger"}
+{"message": "IntegrityError creating category: (psycopg.errors.UniqueViolation) duplicate key value violates unique constraint \"categories_pkey\"\nDETAIL:  Key (category_name)=(_test_integration) already exists.\n[SQL: INSERT INTO categories (category_name) VALUES (%(category_name)s::VARCHAR)]\n[parameters: {'category_name': '_test_integration'}]\n(Background on this error at: https://sqlalche.me/e/20/gkpj)", "url": null, "method": null, "timestamp": "2026-08-10 12:04:37,775", "logger_name": "api_logger"}
+{"message": "HTTPerror 409: Category '_test_integration' already exists", "url": null, "method": null, "timestamp": "2026-08-10 12:04:37,775", "logger_name": "api_logger"}
+{"message": "Reading categories", "url": null, "method": null, "timestamp": "2026-08-10 12:04:37,777", "logger_name": "api_logger"}
+{"message": "Creating category", "url": null, "method": null, "timestamp": "2026-08-10 12:04:37,785", "logger_name": "api_logger"}
+{"message": "IntegrityError creating category: (psycopg.errors.UniqueViolation) duplicate key value violates unique constraint \"categories_pkey\"\nDETAIL:  Key (category_name)=(_test_integration) already exists.\n[SQL: INSERT INTO categories (category_name) VALUES (%(category_name)s::VARCHAR)]\n[parameters: {'category_name': '_test_integration'}]\n(Background on this error at: https://sqlalche.me/e/20/gkpj)", "url": null, "method": null, "timestamp": "2026-08-10 12:04:37,787", "logger_name": "api_logger"}
+{"message": "HTTPerror 409: Category '_test_integration' already exists", "url": null, "method": null, "timestamp": "2026-08-10 12:04:37,787", "logger_name": "api_logger"}
+{"message": "Deleting category", "url": null, "method": null, "timestamp": "2026-08-10 12:04:37,790", "logger_name": "api_logger"}
+{"message": "Category '_does_not_exist_xyz' not found for deletion", "url": null, "method": null, "timestamp": "2026-08-10 12:04:37,793", "logger_name": "api_logger"}
+{"message": "HTTPerror 404: Category not found", "url": null, "method": null, "timestamp": "2026-08-10 12:04:37,793", "logger_name": "api_logger"}
+{"message": "Reading tasks", "url": null, "method": null, "timestamp": "2026-08-10 12:04:37,796", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-08-10 12:04:37,804", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-08-10 12:04:37,818", "logger_name": "api_logger"}
+{"message": "IntegrityError creating task: (psycopg.errors.ForeignKeyViolation) insert or update on table \"tasks\" violates foreign key constraint \"tasks_category_name_fkey\"\nDETAIL:  Key (category_name)=(_nonexistent_cat_xyz) is not present in table \"categories\".\n[SQL: INSERT INTO tasks (category_name, deadline, status, description) VALUES (%(category_name)s::VARCHAR, %(deadline)s::TIMESTAMP WITHOUT TIME ZONE, %(status)s::VARCHAR, %(description)s::VARCHAR) RETURNING tasks.task_id, tasks.created_at]\n[parameters: {'category_name': '_nonexistent_cat_xyz', 'deadline': None, 'status': 'open', 'description': None}]\n(Background on this error at: https://sqlalche.me/e/20/gkpj)", "url": null, "method": null, "timestamp": "2026-08-10 12:04:37,820", "logger_name": "api_logger"}
+{"message": "HTTPerror 409: Constraint violation (e.g. invalid category)", "url": null, "method": null, "timestamp": "2026-08-10 12:04:37,821", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-08-10 12:04:37,823", "logger_name": "api_logger"}
+{"message": "Updating task", "url": null, "method": null, "timestamp": "2026-08-10 12:04:37,829", "logger_name": "api_logger"}
+{"message": "Updating task", "url": null, "method": null, "timestamp": "2026-08-10 12:04:37,844", "logger_name": "api_logger"}
+{"message": "Task 999999 not found for update", "url": null, "method": null, "timestamp": "2026-08-10 12:04:37,847", "logger_name": "api_logger"}
+{"message": "HTTPerror 404: Task not found", "url": null, "method": null, "timestamp": "2026-08-10 12:04:37,847", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-08-10 12:04:37,850", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 12:04:37,855", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 12:04:37,863", "logger_name": "api_logger"}
+{"message": "Task 999999 not found for deletion", "url": null, "method": null, "timestamp": "2026-08-10 12:04:37,866", "logger_name": "api_logger"}
+{"message": "HTTPerror 404: Task not found", "url": null, "method": null, "timestamp": "2026-08-10 12:04:37,866", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-08-10 12:04:37,869", "logger_name": "api_logger"}
+{"message": "Updating task", "url": null, "method": null, "timestamp": "2026-08-10 12:04:37,876", "logger_name": "api_logger"}
+{"message": "Reading tasks", "url": null, "method": null, "timestamp": "2026-08-10 12:04:37,888", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 12:04:37,890", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 12:04:37,894", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 12:04:37,898", "logger_name": "api_logger"}
+{"message": "Error deleting task: Dependency rule on column 'tasks.task_id' tried to blank-out primary key column 'task_status_details.task_id' on instance '<TaskStatusDetails at 0x299f6a39650>'", "url": null, "method": null, "timestamp": "2026-08-10 12:04:37,901", "logger_name": "api_logger"}
+{"message": "HTTPerror 500: Error deleting task: Dependency rule on column 'tasks.task_id' tried to blank-out primary key column 'task_status_details.task_id' on instance '<TaskStatusDetails at 0x299f6a39650>'", "url": null, "method": null, "timestamp": "2026-08-10 12:04:37,902", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 12:04:37,902", "logger_name": "api_logger"}
+{"message": "Error deleting task: Dependency rule on column 'tasks.task_id' tried to blank-out primary key column 'task_status_details.task_id' on instance '<TaskStatusDetails at 0x299f6a32210>'", "url": null, "method": null, "timestamp": "2026-08-10 12:04:37,907", "logger_name": "api_logger"}
+{"message": "HTTPerror 500: Error deleting task: Dependency rule on column 'tasks.task_id' tried to blank-out primary key column 'task_status_details.task_id' on instance '<TaskStatusDetails at 0x299f6a32210>'", "url": null, "method": null, "timestamp": "2026-08-10 12:04:37,907", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 12:04:37,908", "logger_name": "api_logger"}
+{"message": "Error deleting task: Dependency rule on column 'tasks.task_id' tried to blank-out primary key column 'task_status_details.task_id' on instance '<TaskStatusDetails at 0x299f6a45b90>'", "url": null, "method": null, "timestamp": "2026-08-10 12:04:37,911", "logger_name": "api_logger"}
+{"message": "HTTPerror 500: Error deleting task: Dependency rule on column 'tasks.task_id' tried to blank-out primary key column 'task_status_details.task_id' on instance '<TaskStatusDetails at 0x299f6a45b90>'", "url": null, "method": null, "timestamp": "2026-08-10 12:04:37,911", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 12:04:37,912", "logger_name": "api_logger"}
+{"message": "Error deleting task: Dependency rule on column 'tasks.task_id' tried to blank-out primary key column 'task_status_details.task_id' on instance '<TaskStatusDetails at 0x299f6a3b390>'", "url": null, "method": null, "timestamp": "2026-08-10 12:04:37,915", "logger_name": "api_logger"}
+{"message": "HTTPerror 500: Error deleting task: Dependency rule on column 'tasks.task_id' tried to blank-out primary key column 'task_status_details.task_id' on instance '<TaskStatusDetails at 0x299f6a3b390>'", "url": null, "method": null, "timestamp": "2026-08-10 12:04:37,915", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 12:04:37,915", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 12:04:37,983", "logger_name": "api_logger"}
+{"message": "Error deleting task: Dependency rule on column 'tasks.task_id' tried to blank-out primary key column 'task_status_details.task_id' on instance '<TaskStatusDetails at 0x299f6a59190>'", "url": null, "method": null, "timestamp": "2026-08-10 12:04:37,987", "logger_name": "api_logger"}
+{"message": "HTTPerror 500: Error deleting task: Dependency rule on column 'tasks.task_id' tried to blank-out primary key column 'task_status_details.task_id' on instance '<TaskStatusDetails at 0x299f6a59190>'", "url": null, "method": null, "timestamp": "2026-08-10 12:04:37,988", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 12:04:37,988", "logger_name": "api_logger"}
+{"message": "Error deleting task: Dependency rule on column 'tasks.task_id' tried to blank-out primary key column 'task_status_details.task_id' on instance '<TaskStatusDetails at 0x299f6a4d3d0>'", "url": null, "method": null, "timestamp": "2026-08-10 12:04:37,991", "logger_name": "api_logger"}
+{"message": "HTTPerror 500: Error deleting task: Dependency rule on column 'tasks.task_id' tried to blank-out primary key column 'task_status_details.task_id' on instance '<TaskStatusDetails at 0x299f6a4d3d0>'", "url": null, "method": null, "timestamp": "2026-08-10 12:04:37,992", "logger_name": "api_logger"}
+{"message": "Deleting category", "url": null, "method": null, "timestamp": "2026-08-10 12:04:37,992", "logger_name": "api_logger"}
+{"message": "IntegrityError deleting category: (psycopg.errors.NotNullViolation) null value in column \"category_name\" of relation \"tasks\" violates not-null constraint\nDETAIL:  Failing row contains (27, null, null, 2026-08-10 11:38:07.904923, pending, updated description).\n[SQL: UPDATE tasks SET category_name=%(category_name)s::VARCHAR WHERE tasks.task_id = %(tasks_task_id)s::INTEGER]\n[parameters: [{'category_name': None, 'tasks_task_id': 27}, {'category_name': None, 'tasks_task_id': 29}, {'category_name': None, 'tasks_task_id': 32}, {'category_name': None, 'tasks_task_id': 34}, {'category_name': None, 'tasks_task_id': 37}, {'category_name': None, 'tasks_task_id': 39}]]\n(Background on this error at: https://sqlalche.me/e/20/gkpj)", "url": null, "method": null, "timestamp": "2026-08-10 12:04:37,999", "logger_name": "api_logger"}
+{"message": "HTTPerror 409: Cannot delete category (still in use?)", "url": null, "method": null, "timestamp": "2026-08-10 12:04:37,999", "logger_name": "api_logger"}
+{"message": "Creating category", "url": null, "method": null, "timestamp": "2026-08-10 12:18:14,081", "logger_name": "api_logger"}
+{"message": "IntegrityError creating category: (psycopg.errors.UniqueViolation) duplicate key value violates unique constraint \"categories_pkey\"\nDETAIL:  Key (category_name)=(_test_integration) already exists.\n[SQL: INSERT INTO categories (category_name) VALUES (%(category_name)s::VARCHAR)]\n[parameters: {'category_name': '_test_integration'}]\n(Background on this error at: https://sqlalche.me/e/20/gkpj)", "url": null, "method": null, "timestamp": "2026-08-10 12:18:14,163", "logger_name": "api_logger"}
+{"message": "HTTPerror 409: Category '_test_integration' already exists", "url": null, "method": null, "timestamp": "2026-08-10 12:18:14,163", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-08-10 12:18:14,166", "logger_name": "api_logger"}
+{"message": "Updating task", "url": null, "method": null, "timestamp": "2026-08-10 12:18:14,177", "logger_name": "api_logger"}
+{"message": "Updating task", "url": null, "method": null, "timestamp": "2026-08-10 12:18:14,190", "logger_name": "api_logger"}
+{"message": "Unexpected error updating task: can't subtract offset-naive and offset-aware datetimes", "url": null, "method": null, "timestamp": "2026-08-10 12:18:14,193", "logger_name": "api_logger"}
+{"message": "HTTPerror 500: Error updating task: can't subtract offset-naive and offset-aware datetimes", "url": null, "method": null, "timestamp": "2026-08-10 12:18:14,193", "logger_name": "api_logger"}
+{"message": "Reading tasks", "url": null, "method": null, "timestamp": "2026-08-10 12:18:14,278", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 12:18:14,283", "logger_name": "api_logger"}
+{"message": "Error deleting task: Dependency rule on column 'tasks.task_id' tried to blank-out primary key column 'task_status_details.task_id' on instance '<TaskStatusDetails at 0x26d31365ed0>'", "url": null, "method": null, "timestamp": "2026-08-10 12:18:14,288", "logger_name": "api_logger"}
+{"message": "HTTPerror 500: Error deleting task: Dependency rule on column 'tasks.task_id' tried to blank-out primary key column 'task_status_details.task_id' on instance '<TaskStatusDetails at 0x26d31365ed0>'", "url": null, "method": null, "timestamp": "2026-08-10 12:18:14,288", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 12:18:14,288", "logger_name": "api_logger"}
+{"message": "Error deleting task: Dependency rule on column 'tasks.task_id' tried to blank-out primary key column 'task_status_details.task_id' on instance '<TaskStatusDetails at 0x26d31338110>'", "url": null, "method": null, "timestamp": "2026-08-10 12:18:14,292", "logger_name": "api_logger"}
+{"message": "HTTPerror 500: Error deleting task: Dependency rule on column 'tasks.task_id' tried to blank-out primary key column 'task_status_details.task_id' on instance '<TaskStatusDetails at 0x26d31338110>'", "url": null, "method": null, "timestamp": "2026-08-10 12:18:14,292", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 12:18:14,293", "logger_name": "api_logger"}
+{"message": "Error deleting task: Dependency rule on column 'tasks.task_id' tried to blank-out primary key column 'task_status_details.task_id' on instance '<TaskStatusDetails at 0x26d3133a310>'", "url": null, "method": null, "timestamp": "2026-08-10 12:18:14,297", "logger_name": "api_logger"}
+{"message": "HTTPerror 500: Error deleting task: Dependency rule on column 'tasks.task_id' tried to blank-out primary key column 'task_status_details.task_id' on instance '<TaskStatusDetails at 0x26d3133a310>'", "url": null, "method": null, "timestamp": "2026-08-10 12:18:14,297", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 12:18:14,298", "logger_name": "api_logger"}
+{"message": "Error deleting task: Dependency rule on column 'tasks.task_id' tried to blank-out primary key column 'task_status_details.task_id' on instance '<TaskStatusDetails at 0x26d31378ed0>'", "url": null, "method": null, "timestamp": "2026-08-10 12:18:14,301", "logger_name": "api_logger"}
+{"message": "HTTPerror 500: Error deleting task: Dependency rule on column 'tasks.task_id' tried to blank-out primary key column 'task_status_details.task_id' on instance '<TaskStatusDetails at 0x26d31378ed0>'", "url": null, "method": null, "timestamp": "2026-08-10 12:18:14,301", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 12:18:14,302", "logger_name": "api_logger"}
+{"message": "Error deleting task: Dependency rule on column 'tasks.task_id' tried to blank-out primary key column 'task_status_details.task_id' on instance '<TaskStatusDetails at 0x26d312aacd0>'", "url": null, "method": null, "timestamp": "2026-08-10 12:18:14,306", "logger_name": "api_logger"}
+{"message": "HTTPerror 500: Error deleting task: Dependency rule on column 'tasks.task_id' tried to blank-out primary key column 'task_status_details.task_id' on instance '<TaskStatusDetails at 0x26d312aacd0>'", "url": null, "method": null, "timestamp": "2026-08-10 12:18:14,306", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 12:18:14,308", "logger_name": "api_logger"}
+{"message": "Error deleting task: Dependency rule on column 'tasks.task_id' tried to blank-out primary key column 'task_status_details.task_id' on instance '<TaskStatusDetails at 0x26d31338750>'", "url": null, "method": null, "timestamp": "2026-08-10 12:18:14,311", "logger_name": "api_logger"}
+{"message": "HTTPerror 500: Error deleting task: Dependency rule on column 'tasks.task_id' tried to blank-out primary key column 'task_status_details.task_id' on instance '<TaskStatusDetails at 0x26d31338750>'", "url": null, "method": null, "timestamp": "2026-08-10 12:18:14,311", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 12:18:14,312", "logger_name": "api_logger"}
+{"message": "Error deleting task: Dependency rule on column 'tasks.task_id' tried to blank-out primary key column 'task_status_details.task_id' on instance '<TaskStatusDetails at 0x26d3137f150>'", "url": null, "method": null, "timestamp": "2026-08-10 12:18:14,315", "logger_name": "api_logger"}
+{"message": "HTTPerror 500: Error deleting task: Dependency rule on column 'tasks.task_id' tried to blank-out primary key column 'task_status_details.task_id' on instance '<TaskStatusDetails at 0x26d3137f150>'", "url": null, "method": null, "timestamp": "2026-08-10 12:18:14,316", "logger_name": "api_logger"}
+{"message": "Deleting category", "url": null, "method": null, "timestamp": "2026-08-10 12:18:14,316", "logger_name": "api_logger"}
+{"message": "IntegrityError deleting category: (psycopg.errors.NotNullViolation) null value in column \"category_name\" of relation \"tasks\" violates not-null constraint\nDETAIL:  Failing row contains (27, null, null, 2026-08-10 11:38:07.904923, pending, updated description).\n[SQL: UPDATE tasks SET category_name=%(category_name)s::VARCHAR WHERE tasks.task_id = %(tasks_task_id)s::INTEGER]\n[parameters: [{'category_name': None, 'tasks_task_id': 27}, {'category_name': None, 'tasks_task_id': 29}, {'category_name': None, 'tasks_task_id': 32}, {'category_name': None, 'tasks_task_id': 34}, {'category_name': None, 'tasks_task_id': 37}, {'category_name': None, 'tasks_task_id': 39}, {'category_name': None, 'tasks_task_id': 40}]]\n(Background on this error at: https://sqlalche.me/e/20/gkpj)", "url": null, "method": null, "timestamp": "2026-08-10 12:18:14,324", "logger_name": "api_logger"}
+{"message": "HTTPerror 409: Cannot delete category (still in use?)", "url": null, "method": null, "timestamp": "2026-08-10 12:18:14,324", "logger_name": "api_logger"}
+{"message": "Creating category", "url": null, "method": null, "timestamp": "2026-08-10 12:19:16,438", "logger_name": "api_logger"}
+{"message": "IntegrityError creating category: (psycopg.errors.UniqueViolation) duplicate key value violates unique constraint \"categories_pkey\"\nDETAIL:  Key (category_name)=(_test_integration) already exists.\n[SQL: INSERT INTO categories (category_name) VALUES (%(category_name)s::VARCHAR)]\n[parameters: {'category_name': '_test_integration'}]\n(Background on this error at: https://sqlalche.me/e/20/gkpj)", "url": null, "method": null, "timestamp": "2026-08-10 12:19:16,531", "logger_name": "api_logger"}
+{"message": "HTTPerror 409: Category '_test_integration' already exists", "url": null, "method": null, "timestamp": "2026-08-10 12:19:16,531", "logger_name": "api_logger"}
+{"message": "Reading categories", "url": null, "method": null, "timestamp": "2026-08-10 12:19:16,533", "logger_name": "api_logger"}
+{"message": "Creating category", "url": null, "method": null, "timestamp": "2026-08-10 12:19:16,541", "logger_name": "api_logger"}
+{"message": "IntegrityError creating category: (psycopg.errors.UniqueViolation) duplicate key value violates unique constraint \"categories_pkey\"\nDETAIL:  Key (category_name)=(_test_integration) already exists.\n[SQL: INSERT INTO categories (category_name) VALUES (%(category_name)s::VARCHAR)]\n[parameters: {'category_name': '_test_integration'}]\n(Background on this error at: https://sqlalche.me/e/20/gkpj)", "url": null, "method": null, "timestamp": "2026-08-10 12:19:16,543", "logger_name": "api_logger"}
+{"message": "HTTPerror 409: Category '_test_integration' already exists", "url": null, "method": null, "timestamp": "2026-08-10 12:19:16,544", "logger_name": "api_logger"}
+{"message": "Deleting category", "url": null, "method": null, "timestamp": "2026-08-10 12:19:16,547", "logger_name": "api_logger"}
+{"message": "Category '_does_not_exist_xyz' not found for deletion", "url": null, "method": null, "timestamp": "2026-08-10 12:19:16,550", "logger_name": "api_logger"}
+{"message": "HTTPerror 404: Category not found", "url": null, "method": null, "timestamp": "2026-08-10 12:19:16,551", "logger_name": "api_logger"}
+{"message": "Reading tasks", "url": null, "method": null, "timestamp": "2026-08-10 12:19:16,554", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-08-10 12:19:16,562", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-08-10 12:19:16,575", "logger_name": "api_logger"}
+{"message": "IntegrityError creating task: (psycopg.errors.ForeignKeyViolation) insert or update on table \"tasks\" violates foreign key constraint \"tasks_category_name_fkey\"\nDETAIL:  Key (category_name)=(_nonexistent_cat_xyz) is not present in table \"categories\".\n[SQL: INSERT INTO tasks (category_name, deadline, status, description) VALUES (%(category_name)s::VARCHAR, %(deadline)s::TIMESTAMP WITHOUT TIME ZONE, %(status)s::VARCHAR, %(description)s::VARCHAR) RETURNING tasks.task_id, tasks.created_at]\n[parameters: {'category_name': '_nonexistent_cat_xyz', 'deadline': None, 'status': 'open', 'description': None}]\n(Background on this error at: https://sqlalche.me/e/20/gkpj)", "url": null, "method": null, "timestamp": "2026-08-10 12:19:16,578", "logger_name": "api_logger"}
+{"message": "HTTPerror 409: Constraint violation (e.g. invalid category)", "url": null, "method": null, "timestamp": "2026-08-10 12:19:16,578", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-08-10 12:19:16,581", "logger_name": "api_logger"}
+{"message": "Updating task", "url": null, "method": null, "timestamp": "2026-08-10 12:19:16,586", "logger_name": "api_logger"}
+{"message": "Updating task", "url": null, "method": null, "timestamp": "2026-08-10 12:19:16,600", "logger_name": "api_logger"}
+{"message": "Task 999999 not found for update", "url": null, "method": null, "timestamp": "2026-08-10 12:19:16,602", "logger_name": "api_logger"}
+{"message": "HTTPerror 404: Task not found", "url": null, "method": null, "timestamp": "2026-08-10 12:19:16,602", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-08-10 12:19:16,605", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 12:19:16,611", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 12:19:16,619", "logger_name": "api_logger"}
+{"message": "Task 999999 not found for deletion", "url": null, "method": null, "timestamp": "2026-08-10 12:19:16,622", "logger_name": "api_logger"}
+{"message": "HTTPerror 404: Task not found", "url": null, "method": null, "timestamp": "2026-08-10 12:19:16,622", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-08-10 12:19:16,625", "logger_name": "api_logger"}
+{"message": "Updating task", "url": null, "method": null, "timestamp": "2026-08-10 12:19:16,630", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-08-10 12:19:16,643", "logger_name": "api_logger"}
+{"message": "Updating task", "url": null, "method": null, "timestamp": "2026-08-10 12:19:16,648", "logger_name": "api_logger"}
+{"message": "Updating task", "url": null, "method": null, "timestamp": "2026-08-10 12:19:16,655", "logger_name": "api_logger"}
+{"message": "Unexpected error updating task: can't subtract offset-naive and offset-aware datetimes", "url": null, "method": null, "timestamp": "2026-08-10 12:19:16,657", "logger_name": "api_logger"}
+{"message": "HTTPerror 500: Error updating task: can't subtract offset-naive and offset-aware datetimes", "url": null, "method": null, "timestamp": "2026-08-10 12:19:16,658", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-08-10 12:19:16,749", "logger_name": "api_logger"}
+{"message": "Updating task", "url": null, "method": null, "timestamp": "2026-08-10 12:19:16,756", "logger_name": "api_logger"}
+{"message": "Updating task", "url": null, "method": null, "timestamp": "2026-08-10 12:19:16,763", "logger_name": "api_logger"}
+{"message": "Unexpected error updating task: can't subtract offset-naive and offset-aware datetimes", "url": null, "method": null, "timestamp": "2026-08-10 12:19:16,766", "logger_name": "api_logger"}
+{"message": "HTTPerror 500: Error updating task: can't subtract offset-naive and offset-aware datetimes", "url": null, "method": null, "timestamp": "2026-08-10 12:19:16,766", "logger_name": "api_logger"}
+{"message": "Updating task", "url": null, "method": null, "timestamp": "2026-08-10 12:19:16,770", "logger_name": "api_logger"}
+{"message": "Updating task", "url": null, "method": null, "timestamp": "2026-08-10 12:19:16,775", "logger_name": "api_logger"}
+{"message": "Unexpected error updating task: can't subtract offset-naive and offset-aware datetimes", "url": null, "method": null, "timestamp": "2026-08-10 12:19:16,778", "logger_name": "api_logger"}
+{"message": "HTTPerror 500: Error updating task: can't subtract offset-naive and offset-aware datetimes", "url": null, "method": null, "timestamp": "2026-08-10 12:19:16,778", "logger_name": "api_logger"}
+{"message": "Reading tasks", "url": null, "method": null, "timestamp": "2026-08-10 12:19:16,781", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 12:19:16,784", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 12:19:16,790", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 12:19:16,794", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 12:19:16,799", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 12:19:16,804", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 12:19:16,808", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 12:19:16,812", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 12:19:16,816", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 12:19:16,821", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 12:19:16,825", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 12:19:16,829", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 12:19:16,833", "logger_name": "api_logger"}
+{"message": "Deleting category", "url": null, "method": null, "timestamp": "2026-08-10 12:19:16,837", "logger_name": "api_logger"}
+{"message": "Creating category", "url": null, "method": null, "timestamp": "2026-08-10 12:27:15,371", "logger_name": "api_logger"}
+{"message": "Reading categories", "url": null, "method": null, "timestamp": "2026-08-10 12:27:15,467", "logger_name": "api_logger"}
+{"message": "Creating category", "url": null, "method": null, "timestamp": "2026-08-10 12:27:15,474", "logger_name": "api_logger"}
+{"message": "IntegrityError creating category: (psycopg.errors.UniqueViolation) duplicate key value violates unique constraint \"categories_pkey\"\nDETAIL:  Key (category_name)=(_test_integration) already exists.\n[SQL: INSERT INTO categories (category_name) VALUES (%(category_name)s::VARCHAR)]\n[parameters: {'category_name': '_test_integration'}]\n(Background on this error at: https://sqlalche.me/e/20/gkpj)", "url": null, "method": null, "timestamp": "2026-08-10 12:27:15,477", "logger_name": "api_logger"}
+{"message": "HTTPerror 409: Category '_test_integration' already exists", "url": null, "method": null, "timestamp": "2026-08-10 12:27:15,477", "logger_name": "api_logger"}
+{"message": "Deleting category", "url": null, "method": null, "timestamp": "2026-08-10 12:27:15,479", "logger_name": "api_logger"}
+{"message": "Category '_does_not_exist_xyz' not found for deletion", "url": null, "method": null, "timestamp": "2026-08-10 12:27:15,484", "logger_name": "api_logger"}
+{"message": "HTTPerror 404: Category not found", "url": null, "method": null, "timestamp": "2026-08-10 12:27:15,484", "logger_name": "api_logger"}
+{"message": "Reading tasks", "url": null, "method": null, "timestamp": "2026-08-10 12:27:15,487", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-08-10 12:27:15,495", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-08-10 12:27:15,519", "logger_name": "api_logger"}
+{"message": "IntegrityError creating task: (psycopg.errors.ForeignKeyViolation) insert or update on table \"tasks\" violates foreign key constraint \"tasks_category_name_fkey\"\nDETAIL:  Key (category_name)=(_nonexistent_cat_xyz) is not present in table \"categories\".\n[SQL: INSERT INTO tasks (category_name, deadline, status, description) VALUES (%(category_name)s::VARCHAR, %(deadline)s::TIMESTAMP WITHOUT TIME ZONE, %(status)s::VARCHAR, %(description)s::VARCHAR) RETURNING tasks.task_id, tasks.created_at]\n[parameters: {'category_name': '_nonexistent_cat_xyz', 'deadline': None, 'status': 'open', 'description': None}]\n(Background on this error at: https://sqlalche.me/e/20/gkpj)", "url": null, "method": null, "timestamp": "2026-08-10 12:27:15,522", "logger_name": "api_logger"}
+{"message": "HTTPerror 409: Constraint violation (e.g. invalid category)", "url": null, "method": null, "timestamp": "2026-08-10 12:27:15,522", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-08-10 12:27:15,526", "logger_name": "api_logger"}
+{"message": "Updating task", "url": null, "method": null, "timestamp": "2026-08-10 12:27:15,531", "logger_name": "api_logger"}
+{"message": "Updating task", "url": null, "method": null, "timestamp": "2026-08-10 12:27:15,547", "logger_name": "api_logger"}
+{"message": "Task 999999 not found for update", "url": null, "method": null, "timestamp": "2026-08-10 12:27:15,549", "logger_name": "api_logger"}
+{"message": "HTTPerror 404: Task not found", "url": null, "method": null, "timestamp": "2026-08-10 12:27:15,549", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-08-10 12:27:15,552", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 12:27:15,557", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 12:27:15,563", "logger_name": "api_logger"}
+{"message": "Task 999999 not found for deletion", "url": null, "method": null, "timestamp": "2026-08-10 12:27:15,566", "logger_name": "api_logger"}
+{"message": "HTTPerror 404: Task not found", "url": null, "method": null, "timestamp": "2026-08-10 12:27:15,566", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-08-10 12:27:15,569", "logger_name": "api_logger"}
+{"message": "Updating task", "url": null, "method": null, "timestamp": "2026-08-10 12:27:15,574", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-08-10 12:27:15,587", "logger_name": "api_logger"}
+{"message": "Updating task", "url": null, "method": null, "timestamp": "2026-08-10 12:27:15,592", "logger_name": "api_logger"}
+{"message": "Updating task", "url": null, "method": null, "timestamp": "2026-08-10 12:27:15,600", "logger_name": "api_logger"}
+{"message": "Creating task", "url": null, "method": null, "timestamp": "2026-08-10 12:27:15,611", "logger_name": "api_logger"}
+{"message": "Updating task", "url": null, "method": null, "timestamp": "2026-08-10 12:27:15,615", "logger_name": "api_logger"}
+{"message": "Updating task", "url": null, "method": null, "timestamp": "2026-08-10 12:27:15,622", "logger_name": "api_logger"}
+{"message": "Updating task", "url": null, "method": null, "timestamp": "2026-08-10 12:27:15,629", "logger_name": "api_logger"}
+{"message": "Updating task", "url": null, "method": null, "timestamp": "2026-08-10 12:27:15,636", "logger_name": "api_logger"}
+{"message": "Reading tasks", "url": null, "method": null, "timestamp": "2026-08-10 12:27:15,646", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 12:27:15,648", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 12:27:15,652", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 12:27:15,657", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 12:27:15,662", "logger_name": "api_logger"}
+{"message": "Deleting task", "url": null, "method": null, "timestamp": "2026-08-10 12:27:15,668", "logger_name": "api_logger"}
+{"message": "Deleting category", "url": null, "method": null, "timestamp": "2026-08-10 12:27:15,672", "logger_name": "api_logger"}

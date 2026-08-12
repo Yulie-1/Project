@@ -24,6 +24,8 @@ async def read_tasks(request: Request) -> List[Task]:
     try:
         tasks = await db.read_tasks()
         return tasks
+    except HTTPException:
+        raise
     except Exception as e:
         logger.error(f"Error reading tasks: {e}")
         error_response(500, "Internal Server Error", request)
@@ -35,6 +37,8 @@ async def read_categories(request: Request) -> List[str]:
         categories = await db.read_categories()
         # Convert list of Category objects to list of strings
         return [c.category_name for c in categories]
+    except HTTPException:
+        raise
     except Exception as e:
         logger.error(f"Error reading categories: {e}")
         error_response(500, "Internal Server Error", request)
@@ -51,6 +55,8 @@ async def create_task(task: Task, request: Request) -> Task:
         )
         created_task = await db.create_task(db_task)
         return created_task
+    except HTTPException:
+        raise
     except IntegrityError as e:
         logger.error(f"IntegrityError creating task: {e}")
         error_response(409, "Constraint violation (e.g. invalid category)", request)
@@ -64,6 +70,8 @@ async def create_category(category: Category, request: Request) -> Category:
     try:
         created_category = await db.create_category(category.category_name)
         return created_category
+    except HTTPException:
+        raise
     except IntegrityError as e:
         logger.error(f"IntegrityError creating category: {e}")
         error_response(409, f"Category '{category.category_name}' already exists", request)
@@ -80,6 +88,8 @@ async def update_task(task_id: int, task: Task, request: Request) -> Task:
             logger.error(f"Task {task_id} not found for update")
             error_response(404, "Task not found", request)
         return updated_task
+    except HTTPException:
+        raise
     except IntegrityError as e:
         logger.error(f"IntegrityError updating task: {e}")
         error_response(409, "Constraint violation", request)
@@ -96,6 +106,8 @@ async def delete_task(task_id: int, request: Request) -> dict:
             logger.error(f"Task {task_id} not found for deletion")
             error_response(404, "Task not found", request)
         return {"message": f"Task {task_id} deleted successfully"}
+    except HTTPException:
+        raise
     except Exception as e:
         logger.error(f"Error deleting task: {e}")
         error_response(500, f"Error deleting task: {e}", request)
@@ -109,9 +121,11 @@ async def delete_category(category_name: str, request: Request) -> dict:
             logger.error(f"Category '{category_name}' not found for deletion")
             error_response(404, "Category not found", request)
         return {"message": f"Category '{category_name}' deleted successfully"}
+    except HTTPException:
+        raise
     except IntegrityError as e:
-         logger.error(f"IntegrityError deleting category: {e}")
-         error_response(409, "Cannot delete category (still in use?)", request)
+        logger.error(f"IntegrityError deleting category: {e}")
+        error_response(409, "Cannot delete category (still in use?)", request)
     except Exception as e:
         logger.error(f"Error deleting category: {e}")
         error_response(500, f"Error deleting category: {e}", request)
